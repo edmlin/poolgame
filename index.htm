@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<header>
+<style>
+canvas
+{
+  max-width:100%;
+  max-height:100%;
+  border:1px solid gray;
+}
+html,body
+{
+	margin:0;
+}
+form 
+{ 
+	padding: 0px; 
+	width: 100%; 
+}
+#messages
+{
+	max-height:100px;
+	overflow:auto;
+	font-size:12px;
+	padding:0;
+}
+#messages .sent
+{
+	color:blue;
+}
+#messages .received
+{
+	color:green;
+}
+
+#chat
+{
+	float:right;
+	width:400px;
+}
+form input { width: 90%; margin:0;padding:0;border:1px solid gray; }
+form button { width: 9%; background: rgb(130, 224, 255); border: none; margin:0;padding:0;border:1px solid gray; }
+</style>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/p2.js/0.7.1/p2.min.js'></script>
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script src='renderer.js'></script>
+<script src='pool.js'></script>
+</header>
+<body onload='App.main();'>
+<canvas width=800 height=600 id='canvas'></canvas>
+<div id='chat'>
+Hits:<span id='hits'>0</span>
+<form>
+<input name='message' id='message'><button>Send</button>
+</form>
+<ul id='messages'></ul>
+</div>
+</body>
+</html>
